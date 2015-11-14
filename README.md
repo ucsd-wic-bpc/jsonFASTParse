@@ -23,6 +23,7 @@ Quick Start Guide
 -----------------
 
 #### Retrieving a list of strings from JSON ####
+Java
 ```java
 JSONList stringList = (JSONList) JSONParser.getObjectFromString(str);
 for (int i = 0; i < stringList.getEntryCount(); ++i)
@@ -30,6 +31,7 @@ for (int i = 0; i < stringList.getEntryCount(); ++i)
 ```
 
 
+C++
 ```cpp
 JSONList* stringList = (JSONList*) JSONParser::getObjectFromString(str);
 for (int i = 0; i < stringList->get_entry_count(); ++i)
@@ -38,6 +40,7 @@ for (int i = 0; i < stringList->get_entry_count(); ++i)
 
 
 #### Retrieving a list of chars from JSON ####
+Java
 ```java
 JSONList stringList = (JSONList) JSONParser.getObjectFromString(str);
 for (int i = 0; i < stringList.getEntryCount(); ++i)
@@ -45,6 +48,7 @@ for (int i = 0; i < stringList.getEntryCount(); ++i)
 ```
 
 
+C++
 ```cpp
 JSONList* stringList = (JSONList*) JSONParser::getObjectFromString(str);
 for (int i = 0; i < stringList->get_entry_count(); ++i)
