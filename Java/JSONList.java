@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.Dictionary;
+import java.util.Hashtable;
 /*
  * jsonFASTParse
  * @author: Brandon Milton
@@ -7,48 +10,6 @@ import java.util.*;
  * A small Java library meant to parse JSON in a quick fashion, given that the
  * end-user is aware of the JSON data schema. Does not support dictionaries.
  */
-
-class JSONObject {
-  private String data;
-
-  public JSONObject() {
-    this.data = "";
-  }
-
-  public JSONObject(String data) {
-    this.data = data;
-  }
-
-  public String getData() {
-    return this.data;
-  }
-
-  public int castToInt() {
-    return Integer.parseInt(this.data);
-  }
-
-  public double castToDouble() {
-    return Double.parseDouble(this.data);
-  }
-
-  public char castToChar() {
-    return this.data.charAt(0);
-  }
-
-}
-
-class JSONParser {
-
-  public static JSONObject getObjectFromString(String str) {
-    // Check if surrounded by quotes, list brackets, or nothing
-    if (str.charAt(0) == '[' && str.charAt(str.length() - 1) == ']')
-      return new JSONList(str.substring(1, str.length() - 1));
-    else if (str.charAt(0) == '"' && str.charAt(str.length() - 1) == '"')
-      return new JSONObject(str.substring(1, str.length() - 1));
-    else
-      return new JSONObject(str);
-  }
-}
 
 class JSONList extends JSONObject {
   public ArrayList<JSONObject> entries;
