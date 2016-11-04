@@ -28,6 +28,16 @@ class JSONObject {
 
     template <typename T> 
     T cast_data();
+
+    template <typename T>
+    pair<T*, int> cast_to_list() {
+      JSONList* thisList = (JSONList*) this;
+      int len = thisList->get_entry_count();
+      T* arr = new T[len];
+      for (int ii = 0; ii < len; ii++)
+        arr[ii] = thisList->get_item(ii)->cast_data<T>();
+      return {arr, len};
+    }
 };
 
 template <> int JSONObject::cast_data() {
@@ -40,6 +50,10 @@ template <> double JSONObject::cast_data() {
 
 template <> char JSONObject::cast_data() {
   return this->get_data()[0];
+}
+
+template <> bool JSONObject::cast_data() {
+  return get_data == "true";
 }
 
 

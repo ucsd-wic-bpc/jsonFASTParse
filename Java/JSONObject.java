@@ -34,5 +34,9 @@ class JSONObject {
     return this.data.charAt(0);
   }
 
+  public boolean castToBool() {
+    return Boolean.parseBoolean(this.data);
+  }
+
 }
 
