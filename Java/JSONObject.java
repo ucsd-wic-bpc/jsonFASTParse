@@ -22,6 +22,10 @@ class JSONObject {
     return this.data;
   }
 
+  public String castToString() {
+    return this.data;
+  }
+
   public int castToInt() {
     return Integer.parseInt(this.data);
   }
