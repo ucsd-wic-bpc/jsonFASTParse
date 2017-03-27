@@ -33,9 +33,9 @@ for (int i = 0; i < stringList.getEntryCount(); ++i)
 
 C++
 ```cpp
-JSONList* stringList = (JSONList*) JSONParser::getObjectFromString(str);
+JSONList* stringList = (JSONList*) JSONParser::get_obj_from_str(str);
 for (int i = 0; i < stringList->get_entry_count(); ++i)
-	cout << stringList->get_item(i)->get_data() << endl;
+	cout << stringList->get_item(i)->cast_data<std::string>() << endl;
 ```
 
 
@@ -50,7 +50,7 @@ for (int i = 0; i < stringList.getEntryCount(); ++i)
 
 C++
 ```cpp
-JSONList* stringList = (JSONList*) JSONParser::getObjectFromString(str);
+JSONList* stringList = (JSONList*) JSONParser::get_obj_from_str(str);
 for (int i = 0; i < stringList->get_entry_count(); ++i)
 	cout << stringList->get_item(i)->cast_data<char>() << endl;
 ```
